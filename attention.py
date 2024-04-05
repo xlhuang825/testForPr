@@ -9,8 +9,6 @@ class MultiheadAttention(nn.Module):
         self.hid_dim = hid_dim
         self.n_heads = n_heads
 
-        # 强制 hid_dim 必须整除 h
-        assert hid_dim % n_heads == 0
         # 定义 W_q 矩阵
         self.w_q = nn.Linear(hid_dim, hid_dim)
         # 定义 W_k 矩阵
